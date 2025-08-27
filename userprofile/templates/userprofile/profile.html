@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profiles</title>
+</head>
+<body>
+    <h2>Uploaded Profiles</h2>
+    <ul>
+        {% for profile in profiles %}
+        <li>
+            <strong>{{ profile.name }}</strong><br>
+            <img src="{{ profile.profile_pic.url }}" width="150" height="150" alt="Profile Picture">
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'upload_profile' %}">Upload Another</a>
+</body>
+</html>
